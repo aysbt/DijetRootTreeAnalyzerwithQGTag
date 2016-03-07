@@ -39,7 +39,7 @@
 ##outputdir="plots_data4T_Run2015D_DCSonly_JEC_Summer15_25nsV5_withSF_sample45678/"
 #outputdir="plots_data4T_Run2015D_DCSonly_JEC_Summer15_25nsV5_withSF_sample45678_dEta_less_2.6/"
 #outputdir="plots_data4T_Run2015D_DCSonly_JEC_Summer15_25nsV5_withSF_sample8/"
-outputdir="plots_data4T_Run2015D_DCSonly_1769pb-1_JEC_Summer15_25nsV6_withSF/"
+outputdir="plots_data4T_Run2015D_DCSonly_2445pb-1_JEC_Summer15_25nsV6_withSF/"
 
 #list_mc="list_for_plots_mc_Spring15_25ns.txt"
 list_mc="list_for_plots_mc_Spring15_25ns_plusSig.txt"
@@ -63,7 +63,7 @@ list_data="list_for_plots_data4T_Run2015D_DCSonly_1769pb-1_flag_Cert_246908-2587
 #lumi=803.
 #lumi=547.
 #lumi=809.
-lumi=1769
+lumi=2445
 
 mkdir -p $outputdir
 
