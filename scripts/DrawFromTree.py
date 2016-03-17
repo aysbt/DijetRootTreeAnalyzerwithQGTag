@@ -70,9 +70,10 @@ lumi = options.lumi
 #colorL    = [ROOT.kBlack, ROOT.kBlack, ROOT.kBlack, ROOT.kBlack, ROOT.kBlack, ROOT.kBlack, ROOT.kBlack, ROOT.kBlack,ROOT.kBlack]
 hist_allCuts      = []
 
-LUMI      = lumi
+LUMI      = 2445.
 #PATH      = inputDir
-
+minX_mass =1181.
+maxX_mass = 7866. 
 #---- read the list -----------------
 lines = [line.strip() for line in open(inputList)]
 
@@ -102,7 +103,7 @@ for f in fileNames:
 
   h_allCuts = TH1F("h_allCuts", "", bins, xmin, xmax)
   tree = inf.Get('rootTupleTree/tree')
-  tree.Project(h_allCuts.GetName(), var,'deltaETAjj < 1.3')
+  tree.Project(h_allCuts.GetName(), var,'deltaETAjj < 1.3 && mjj >' +str(minX_mass))
   Npassed = h_allCuts.GetEntries()
   eff = float(Npassed)/Nev
   print('eff : %f' % eff)
@@ -118,21 +119,21 @@ for f in fileNames:
    
   i_f += 1
 
-h_sig = hist_allCuts[9].Clone()
+h_sig = hist_allCuts[8].Clone()
 h_sig.SetLineStyle(2)
 h_sig.SetLineWidth(2)
 h_sig.SetLineColor(kRed)
 
 #kFactor = NDAT/NQCD
-kFactor = 1.3
-print ("kFactor = %f" % kFactor)
+#kFactor = 1.3
+#print ("kFactor = %f" % kFactor)
 
                                       
 #for i in range(0,len(fileNames)) :
 for i in range(0,9) :
-  hist_allCuts[i].Scale(kFactor)
+ # hist_allCuts[i].Scale(kFactor)
  
-NQCD_allCuts = hist_allCuts[0].Integral()
+  NQCD_allCuts = hist_allCuts[0].Integral()
 
 #for i in range(0,len(fileNames)) :
 for i in range(0,9) :
