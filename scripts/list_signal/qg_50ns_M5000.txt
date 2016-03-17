@@ -1,0 +1,1 @@
+root://cmsxrootd.fnal.gov//store/user/abat/root_file/signal/QG/nocut/RSG_QG_50ns_M5000_reduced_skim.root 1
